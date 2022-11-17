@@ -7,7 +7,7 @@
 
 
 	<context:annotation-config />
-	<context:component-scan base-package="ejemploMVC" />
+	<context:component-scan base-package="com.ejemplo.jdbc.dao.structure.DAO" />
 		
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="org.postgresql.Driver"></property>    
