@@ -9,16 +9,16 @@ import javax.sql.DataSource;
 public class EclToPostgreImpl implements AlumnoInterface {
 
 	// Usamos el datasource
-	DataSource datasource;
+	DataSource dataSource;
 
 	// Generamos sus getter y setter, para recoger y enviar la información de inicio
 	// de sesión
 	public DataSource getDatasource() {
-		return datasource;
+		return dataSource;
 	}
 
 	public void setDatasource(DataSource datasource) {
-		this.datasource = datasource;
+		this.dataSource = datasource;
 	}
 
 	public void insertar(String consulta) {
@@ -26,10 +26,10 @@ public class EclToPostgreImpl implements AlumnoInterface {
 		try {
 			// Hacemos la conexion
 			System.out.println("[EclToPostgreImpl.java]: Generando conexión");
-			Connection cn = datasource.getConnection();
-			if (cn == null) {
-				System.out.println("[EclToPostgreImpl.java]: La conexión ha fallado (CONEXION == NULL)");
-			}
+			System.out.println(dataSource.getConnection());
+			Connection cn = this.dataSource.getConnection();
+			System.out.println(cn);
+
 			// Preparamos el Statement
 			System.out.println("[EclToPostgreImpl.java]: Preparamos el Statement");
 			java.sql.Statement declaracionSQL = null;
@@ -46,6 +46,8 @@ public class EclToPostgreImpl implements AlumnoInterface {
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
+			System.out.println("[EclToPostgreImpl.java]: La conexión ha fallado (CONEXION == NULL)");
+
 			e.printStackTrace();
 		}
 	}
