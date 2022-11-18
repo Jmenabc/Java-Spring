@@ -5,7 +5,10 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 import javax.sql.DataSource;
-
+/*
+ * Clase que contiene La implementación del datasource y el método insertar
+ * @author Jmenabc
+ */
 public class EclToPostgreImpl implements AlumnoInterface {
 
 	// Usamos el datasource
